@@ -1,8 +1,28 @@
+// Reset
+* {
+margin: 0;
+}
+
+html {
+margin: 0;
+}
+
+body {
+margin: 0;
+}
+
 body {
   font-family: Helvetica;
   background-color: #fafafa;
 }
+nav {
+  background-color: black;
+  height: 50px;
+  line-height: 50px;
+}
 h1 {
+  vertical-align: bottom;
+  color: white;
   max-width: 350px;
   margin: auto;
 }
@@ -15,7 +35,13 @@ h1 {
   max-width: 350px;
   margin: 20px auto;
 }
-
+.msg {
+  font-size: 17px;
+}
+.handle {
+  font-weight: bold;
+  font-size: 14px;
+}
 .time {
   font-size: 13px;
   color: #7f7f7f;
