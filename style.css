@@ -1,0 +1,22 @@
+body {
+  font-family: Helvetica;
+  background-color: #fafafa;
+}
+h1 {
+  max-width: 350px;
+  margin: auto;
+}
+.tweets {
+  max-width: 600px;
+  margin: auto;
+}
+
+.tweet {
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.time {
+  font-size: 13px;
+  color: #7f7f7f;
+}
