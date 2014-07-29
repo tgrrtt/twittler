@@ -11,21 +11,29 @@
     <h1>Twittler</h1>
     <div class="tweets"></div>
     <script>
-
+  
       $(document).ready(function(){
         var $tweets = $('.tweets');
         $tweets.html('');
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div><span class="handle"></span><span class="time"></span><div class="msg"></div></div>');
-          $tweet.children(".handle").text('@' + tweet.user + ' - ')
-          $tweet.children(".msg").text(tweet.message);
-          $tweet.children(".time").attr("data-livestamp", tweet.created_at.toISOString());
-          $tweet.appendTo($tweets);
-          index -= 1;
-        }
+        var displayTweets = function(){
+          var index = streams.home.length - 1;
+          while(index >= 0){
+            var tweet = streams.home[index];
+            var $tweet = $('<div class="tweet"><span class="handle"></span><span class="time"></span><div class="msg"></div></div>');
+            $tweet.children(".handle").text('@' + tweet.user + ' - ');
+            $tweet.children(".msg").text(tweet.message);
+            $tweet.children(".time").attr("data-livestamp", tweet.created_at.toISOString());
+            // Newest tweets first.
+            $tweet.prependTo($tweets);
+            index -= 1;
+            //streams.home only contains not-displayed "tweets"
+            streams.home.pop();
+          }
+          // limit tweets to 15 newest tweets
+          $(".tweet:gt(15)").remove();
+        };
+        displayTweets();
+        setInterval(displayTweets, 1000);
       });
     </script>
   </body>
