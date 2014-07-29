@@ -52,7 +52,9 @@ for(var i = 0; i < 10; i++){
 
 var scheduleNextTweet = function(){
   generateRandomTweet();
-  setTimeout(scheduleNextTweet, Math.random() * 1500);
+  // made max random time longer... tweets were getting made too fast
+  // default was 1500ms
+  setTimeout(scheduleNextTweet, Math.random() * 7000);
 };
 scheduleNextTweet();
 
