@@ -3,8 +3,8 @@
   <head>
     <script src="jquery.js"></script>
     <script src="moment.js"></script>
-    <script src="livestamp.min.js"></script>
     <script src="data_generator.js"></script>
+    <script src="twittler.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -15,48 +15,5 @@
       </div>
     </nav>
     <div class="tweets"></div>
-    <script>
-      $(document).ready(function(){
-        // Set default username
-        window.visitor = "anon";
-        
-        // capture tweets div
-        var $tweets = $('.tweets');
-        $tweets.html('');
-                
-        var postTweet = function() {
-          if (visitor === "anon") {
-            visitor = prompt("Whats your handle?");
-          }
-          writeTweet(prompt("Enter your tweet!"));
-        };
-        
-        // create new post when clicking .newTweet
-        $(".newTweet").click(postTweet);
-        
-        //displayTweets
-        var displayTweets = function(){
-          var index = streams.home.length - 1;
-          while(index >= 0){
-            var tweet = streams.home[index];
-            var $tweet = $('<div class="tweet"><span class="handle"></span><span class="time"></span><div class="msg"></div></div>');
-            $tweet.children(".handle").text('@' + tweet.user + ' - ');
-            $tweet.children(".msg").text(tweet.message);
-            $tweet.children(".time").attr("data-livestamp", tweet.created_at.toISOString());
-            // Newest tweets first.
-            $tweet.prependTo($tweets);
-            index -= 1;
-            //streams.home only contains not-displayed "tweets"
-            streams.home.pop();
-          }
-          // limit tweets to 15 newest tweets
-          $(".tweet:gt(15)").remove();
-        };
-        
-        // Init tweet display
-        displayTweets();
-        setInterval(displayTweets, 1000);
-      });
-    </script>
   </body>
 </html>
