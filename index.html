@@ -9,14 +9,32 @@
   </head>
   <body>
     <nav>
-      <h1>Twittler</h1>
+      <div class="nav-container">
+        <h1>Twittler</h1>
+        <span class="newTweet">+</span>        
+      </div>
     </nav>
     <div class="tweets"></div>
     <script>
-  
       $(document).ready(function(){
+        // Set default username
+        window.visitor = "anon";
+        
+        // capture tweets div
         var $tweets = $('.tweets');
         $tweets.html('');
+                
+        var postTweet = function() {
+          if (visitor === "anon") {
+            visitor = prompt("Whats your handle?");
+          }
+          writeTweet(prompt("Enter your tweet!"));
+        };
+        
+        // create new post when clicking .newTweet
+        $(".newTweet").click(postTweet);
+        
+        //displayTweets
         var displayTweets = function(){
           var index = streams.home.length - 1;
           while(index >= 0){
@@ -34,6 +52,8 @@
           // limit tweets to 15 newest tweets
           $(".tweet:gt(15)").remove();
         };
+        
+        // Init tweet display
         displayTweets();
         setInterval(displayTweets, 1000);
       });

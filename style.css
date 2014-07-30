@@ -20,11 +20,33 @@ nav {
   height: 50px;
   line-height: 50px;
 }
-h1 {
-  vertical-align: bottom;
-  color: white;
+.nav-container {
   max-width: 350px;
   margin: auto;
+}
+
+h1 {
+  color: white;
+  max-width: 350px;
+  margin: auto; 
+  display: inline-block;
+}
+.newTweet {
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  height: 25px;
+  width: 25px;
+  line-height: 25px;
+  background-color: #88d6ce;
+  float: right; 
+  margin-top: 12px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.newTweet:hover {
+  cursor: pointer;
+  background-color: #6bd2c1;
 }
 .tweets {
   max-width: 600px;
