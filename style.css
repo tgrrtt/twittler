@@ -34,7 +34,7 @@ h1 {
 h1:hover {
   cursor: pointer;
 }
-.newTweet {
+.nav-button {
   text-align: center;
   border-radius: 5px;
   color: white;
@@ -47,7 +47,7 @@ h1:hover {
   margin-right: 10px;
   display: block;
 }
-.newTweet:hover {
+.nav-button:hover {
   cursor: pointer;
   background-color: #a2a2a2;
 }

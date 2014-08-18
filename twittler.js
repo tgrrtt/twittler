@@ -6,7 +6,7 @@ $(document).ready(function(){
   window.state = "home";
   
   // show all tweets when click on twittler logo;
-  $("h1").click(function(){
+  $("h1, .home").click(function(){
     state = "home";
     displayTweets();
   });
@@ -21,8 +21,8 @@ $(document).ready(function(){
     writeTweet(prompt("Write your tweet!"));
   };
 
-  // create new post when clicking .newTweet
-  $(".newTweet").click(postTweet);
+  // create new post when clicking .new-tweet
+  $(".new-tweet").click(postTweet);
   
   // displays all users tweets in $tweets div
   var showUsersTweets = function () {
