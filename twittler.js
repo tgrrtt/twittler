@@ -16,9 +16,9 @@ $(document).ready(function(){
           
   var postTweet = function() {
     if (visitor === "anon") {
-      visitor = prompt("Whats your username?");
+      visitor = prompt("What's your username?");
     }
-    writeTweet(prompt("Enter your tweet!"));
+    writeTweet(prompt("Write your tweet!"));
   };
 
   // create new post when clicking .newTweet

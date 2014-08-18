@@ -1,4 +1,4 @@
-// Reset
+/*reset*/
 * {
 margin: 0;
 }
@@ -41,15 +41,15 @@ h1:hover {
   height: 25px;
   width: 25px;
   line-height: 25px;
-  background-color: #88d6ce;
+  background-color: #7f7f7f;
   float: right; 
   margin-top: 12px;
   margin-right: 10px;
-  display: inline-block;
+  display: block;
 }
 .newTweet:hover {
   cursor: pointer;
-  background-color: #6bd2c1;
+  background-color: #a2a2a2;
 }
 .tweets {
   max-width: 600px;
@@ -58,8 +58,17 @@ h1:hover {
 
 .tweet {
   max-width: 350px;
-  margin: 20px auto;
+  margin: 0 auto;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
 }
+
+.tweet:nth-of-type(1)
+{
+  padding-top: 20px;
+  border-top: none;
+} 
 .msg {
   font-size: 17px;
 }
